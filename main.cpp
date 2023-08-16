@@ -13,6 +13,9 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <unordered_map>
+
+#include "LinkedList.h"
 
 using namespace std;
 
@@ -24,9 +27,22 @@ int main(int argc, char** argv) {
     cout <<"Please type your name.."<<endl;
     string userName;
     getline(cin, userName);
-    cout<< "Hello "<< userName << " to the Coding World!"<< endl;
+    cout<< "Welcome to the C++ coding World!"<< endl;
     
+    cout<< "Hello " << userName << ", input number to create a Linked list"<< endl;
+    int dataInput;
+    cin>> dataInput;
+    
+    cout<< "Data input " << dataInput << endl;
+    //Create a linked list
+    LinkedList myIntList = LinkedList(dataInput);
+    myIntList.insertFirst(10);
+    myIntList.insertFirst(20);
+    myIntList.insertFirst(30);
+    myIntList.printList();
     // Create an empty vector
+    
+    cout <<"Adding to a vector list: "<< endl;
     vector<int> vect;
   
     vect.push_back(10);
@@ -35,6 +51,8 @@ int main(int argc, char** argv) {
   
     for (int x : vect)
         cout << x << " ";
+    
+    
     
     return 0;
 }
